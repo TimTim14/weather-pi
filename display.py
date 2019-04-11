@@ -55,7 +55,7 @@ def main():
 
 	  # Every 5 minutes post up to our production site.
 	  # Feel free to change this or eliminate this during testing.
-        if (time_counter % 300 == 0):
+        if (time_counter % 10 == 0):
             report()
 
 	  # Increment a counter (1 per second. 5 here since we sleep 5 below)
