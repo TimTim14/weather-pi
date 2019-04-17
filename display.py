@@ -34,6 +34,10 @@ def report():
 	data = bme280.sample(bus, address, calibration_params)
 	t = {'celsius': data.temperature}
 	r = requests.post(API_ENDPOINT , t)
+	h = requests.post(API_ENDPOINT + 'rh/', 
+		data ={'data.humidity'}
+	p = requests.post(API_ENDPOINT + 'bh/' ,
+		data ={'data.pressure'}
 	print(r.text)
 def main():
     time_counter = 0
@@ -74,6 +78,7 @@ def main():
         
         print(data.temperature * (9/5) + 32)
         print(data.humidity)
+	print(data.pressure)
         
 while True:   
     main()
