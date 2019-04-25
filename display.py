@@ -33,11 +33,11 @@ calibration_params = bme280.load_calibration_params(bus, address)
 def report():
 	data = bme280.sample(bus, address, calibration_params)
 	t = {'celsius': data.temperature}
+	rh = {'Humidity': data.humidity}
+	bp = {'Pressure': data.pressure}
 	r = requests.post(API_ENDPOINT , t)
-	h = requests.post(API_ENDPOINT + 'rh/', 
-		data ={'data.humidity'}
-	p = requests.post(API_ENDPOINT + 'bh/' ,
-		data ={'data.pressure'}
+	rh = requests.post(API_ENDPOINT + 'rh/', rh}
+	bp = requests.post(API_ENDPOINT + 'bp/', bp}
 	print(r.text)
 def main():
     time_counter = 0
@@ -82,4 +82,5 @@ def main():
         
 while True:   
     main()
+    report()
     time.sleep(2)     
