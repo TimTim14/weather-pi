@@ -30,7 +30,6 @@ bus = smbus2.SMBus(port)
 calibration_params = bme280.load_calibration_params(bus, address)
 API_ENDPOINT = "http://clelland.shelms.io/api/"
 
-
 def report():
     data = bme280.sample(bus, address, calibration_params)
     t = {'celsius': data.temperature}
