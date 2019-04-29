@@ -39,6 +39,8 @@ def report():
     p = requests.post(API_ENDPOINT + 'bh/',
     data ={'bp': data.pressure})
     print(r.text)
+    print(h.text)
+    print(p.text)
 def main():
     time_counter = 0
 
